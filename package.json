@@ -1,6 +1,6 @@
 {
   "name": "@378q/mnn-prebuilt",
-  "version": "3.2.2-alpha.4",
+  "version": "3.2.2-alpha.8",
   "description": "Prebuilt binaries for MNN across multiple platforms",
   "main": "index.js",
   "scripts": {
@@ -10,11 +10,23 @@
   "publishConfig": {
     "access": "public"
   },
-  "keywords": ["native", "prebuilt", "MNN", "cross-platform"],
+  "keywords": [
+    "native",
+    "prebuilt",
+    "MNN",
+    "cross-platform"
+  ],
   "author": "zxfishhack",
   "license": "Apache-2.0",
-  "os": ["win32", "darwin", "linux"],
-  "cpu": ["x64", "arm64"],
+  "os": [
+    "win32",
+    "darwin",
+    "linux"
+  ],
+  "cpu": [
+    "x64",
+    "arm64"
+  ],
   "engines": {
     "node": ">=22.0.0"
   },
@@ -22,10 +34,16 @@
     "type": "git",
     "url": "https://github.com/zxfishhack/mnn-prebuilt"
   },
+  "optionalDependencies": {
+    "@378q/mnn-darwin-universal": "^3.2.2-alpha1",
+    "@378q/mnn-win32-x64": "^3.2.2-alpha1",
+    "@378q/mnn-linux-x64": "^3.2.2-alpha1"
+  },
   "files": [
     "lib/",
     "index.js",
     "binding.gyp",
     "scripts/"
-  ]
+  ],
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

@@ -45,27 +45,6 @@ function getLibPath() {
   return pkg.libPath;
 }
 
-function getBindingPath() {
-  try {
-    const packageName = getPlatformPackage();
-    const platformPath = path.join(__dirname, 'node_modules', packageName);
-    
-    if (fs.existsSync(platformPath)) {
-      return path.join(platformPath, 'binding.node');
-    }
-    
-    // 备用路径
-    const localPath = path.join(__dirname, 'platforms', `${os.platform()}-${os.arch()}`, 'binding.node');
-    if (fs.existsSync(localPath)) {
-      return localPath;
-    }
-    
-    throw new Error(`MNN binding not found for platform ${os.platform()}-${os.arch()}`);
-  } catch (error) {
-    throw new Error(`Failed to locate MNN binding: ${error.message}`);
-  }
-}
-
 function getLibraries() {
   const libPath = getLibPath();
   const files = fs.readdirSync(libPath);
@@ -152,12 +131,10 @@ function getGypConfig() {
 }
 
 module.exports = {
-  binding: getBindingPath(),
   getPlatformPackage,
   getLibraries,
   getLibraryNames,
   getIncludePath,
   getLibPath,
-  getBindingPath,
   getGypConfig,
 };

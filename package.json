@@ -1,6 +1,6 @@
 {
   "name": "@378q/mnn-prebuilt",
-  "version": "3.2.2-alpha.8",
+  "version": "3.2.2-rc1",
   "description": "Prebuilt binaries for MNN across multiple platforms",
   "main": "index.js",
   "scripts": {
